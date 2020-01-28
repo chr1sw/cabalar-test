@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+
+{{ partial "store-info" .Params.info }}
+
+{{ partial "news" .Params.news }}
+
+{{ partial "menu-section" (dict "heading" .Params.food.heading "text" .Params.food.text "buttonText" "See Menu" "buttonLink" "/menu") }}
+
+{{ partial "products-section" (dict "heading" .Params.products.heading "text" .Params.products.text "buttonText" "Read More" "buttonLink" "/products") }}
+
+{{ partial "values-section" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read More" "buttonLink" "/values") }}
+
+{{ partial "farms-section" (dict "heading" .Params.farms.heading "text" .Params.farms.text "buttonText" "Read More" "buttonLink" "/farms") }}
+
+{{ end }}

@@ -1,0 +1,149 @@
+backend:
+  name: git-gateway
+
+media_folder: "site/static/img" # Folder where user uploaded files should go
+public_folder: "img"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Pages"
+    files:
+        - file: "site/content/_index.md"
+          label: "Home"
+          name: "home"
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image}
+            - {label: "Info", name: info, widget: object, fields: [
+                {label: "Heading", name: "heading", widget: text},
+                {label: "Address1", name: "addone", widget: text},
+                {label: "Address2", name: "addtwo", widget: text},
+                {label: "Hours", name: "hours", widget: text},
+                {label: "Note", name: "note", widget: text}]}
+            - {label: "News", name: news, widget: object, fields: [
+                {label: "Heading", name: "heading", widget: text},
+                {label: "Text", name: "text", widget: "text"}]}
+            - {label: "Menu", name: food, widget: object, fields: [
+                {label: "Heading", name: "heading", widget: text},
+                {label: "Text", name: "text", widget: "text"}]}
+            - {label: "Products", name: products, widget: object, fields: [
+                {label: "Heading", name: "heading", widget: text},
+                {label: "Text", name: "text", widget: "text"}]}
+            - {label: "Values", name: values, widget: object, fields: [
+                {label: "Heading", name: "heading", widget: text},
+                {label: "Text", name: "text", widget: "text"}]}
+            - {label: "Farms", name: farms, widget: object, fields: [
+                {label: "Heading", name: "heading", widget: text},
+                {label: "Text", name: "text", widget: "text"}]}
+        - file: "site/content/contact/_index.md"
+          label: "Contact"
+          name: "contact"
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Logo, name: logo, widget: image}
+            - {label: Body, name: body, widget: markdown}
+            - label: Contact Entries
+              name: contact_entries
+              widget: list
+              fields:
+              - label: Heading
+                name: heading
+                widget: string
+              - label: Text
+                name: text
+                widget: text
+        - file: "site/content/values/_index.md"
+          label: "Values"
+          name: "values"
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image}
+            - label: Values
+              name: values
+              widget: list
+              fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Text, name: text, widget: text}
+              - {label: Image, name: imageUrl, widget: image}
+        - file: "site/content/menu/_index.md"
+          label: "Menu"
+          name: "menu"
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image}
+            - label: Snacks & Sides
+              name: snacks
+              widget: list
+              fields:
+               - {label: Name, name: name, widget: text}
+               - {label: Description, name: description, widget: text}
+               - {label: Price, name: price, widget: string}
+            - label: Sandwiches
+              name: sandwiches
+              widget: list
+              fields:
+                - {label: Name, name: name, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Price, name: price, widget: string}
+            - label: Burgers
+              name: burgers
+              widget: list
+              fields:
+                - {label: Name, name: name, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Price, name: price, widget: string}
+            - label: Salads
+              name: salads
+              widget: list
+              fields:
+                - {label: Name, name: name, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Price, name: price, widget: string}
+            - label: Brunch
+              name: brunch
+              widget: list
+              fields:
+                - {label: Name, name: name, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Price, name: price, widget: string}   
+            - label: Dessert
+              name: dessert
+              widget: list
+              fields:
+                - {label: Name, name: name, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Price, name: price, widget: string}
+            - label: Beverages
+              name: beverages
+              widget: list
+              fields:
+                - {label: Name, name: name, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Price, name: price, widget: string}           
+        - file: "site/content/farms/_index.md"
+          label: "Farms"
+          name: "farms"
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image}
+            - label: Farms
+              name: farms
+              widget: list
+              fields:
+                - {label: Farm, name: farm, widget: text}
+                - {label: Location, name: location, widget: text}
+                - {label: Description, name: description, widget: text}
+                - {label: Image, name: imageUrl, widget: image}
+        - file: "site/content/products/_index.md"
+          label: "Products"
+          name: "products"
+          fields:
+            - {label: Title, name: title, widget: string}
+            - {label: Image, name: image, widget: image}
+            - label: Products
+              name: products
+              widget: list
+              fields:
+                - {label: Image, name: imageUrl, widget: image}
+                - {label: Name, name: name, widget: string}
+                - {label: Text, name: text, widget: text}
